@@ -4,24 +4,24 @@
 	//			console.log("Load was performed from jEP.js");
 	//		});
 
-    // beter werkt ajax async
-    // 	$.ajax({
+	// beter werkt ajax async
+	// 	$.ajax({
 	//			async: false,
 	//			url: "libs/jep.js",
 	//			dataType: "script"
 	//		});
-    
-    // onderstaande boven in elke component zetten zodat je geen eslint errors krijgt
-    // met de /* */
-    /* global _jep:true */
+
+	// onderstaande boven in elke component zetten zodat je geen eslint errors krijgt
+	// met de /* */
+	/* global _jep:true */
 
 
-    //je kunt de lib aanroepen in je programma
-    //var jep = _jep(true); indien je javascript only 
-    //var jep = _jep();
-    //nu heb je alle functie die public zijn terbeschikking
-    //console.log(jep);
-    // ander optie is _jep().log();
+	//je kunt de lib aanroepen in je programma
+	//var jep = _jep(true); indien je javascript only
+	//var jep = _jep();
+	//nu heb je alle functie die public zijn terbeschikking
+	//console.log(jep);
+	// ander optie is _jep().log();
 
 	(function (global, $, sap) {
 
@@ -49,7 +49,7 @@
 	            if (console) {
 	                console.log("In Log methode van prototype");
 	            }
-                //make chainable
+	            //make chainable
 	            return this;
 	        },
 
@@ -62,9 +62,17 @@
 	            } else {
 	                toggleBtn.setVisible(true);
 	            }
-                //make chainable
-                //_jep.elmToggleVisible(element,boole).elmToggleVisible(element,boole);
-                return this;
+	            //make chainable
+	            //_jep.elmToggleVisible(element,boole).elmToggleVisible(element,boole);
+	            return this;
+	        },
+
+	        //not chainable
+	        formatDate: function (sText, sDate) {
+	            var dateFormat = sap.ui.core.format.DateFormat.getDateInstance({
+	                pattern: "dd-MM-yyyy"
+	            });
+	            return sText + dateFormat.format(sDate);
 	        }
 	    }; //stop buitenaf zichtbaar
 
