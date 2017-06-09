@@ -2,7 +2,7 @@
 Util lib die geladen wordt op het window object (framework idee is van jQuery)
 
   Normaal gesproken kan de lib geladen worden vanuit de index.html
-  Voor SAPUI5 is er voor gekozen op de lib te laden in de component.
+  Voor SAPUI5 is er voor gekozen om de lib te laden in de component.
   Dan maakt het niet uit waar je de app deployed en hoe je hem start.
   Dus vanuit FLP met component en in mobile app index.html.
   
