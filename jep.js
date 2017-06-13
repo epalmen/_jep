@@ -25,18 +25,18 @@
 
 	(function (global, $, sap) {
 
-	    var Jep = function (pureJavaScript) {
-	        return new Jep.init(pureJavaScript);
+	    var Jep = function (NoUi5) {
+	        return new Jep.init(NoUi5);
 	    };
 
 	    //niet zichtbaar van buitenaf
 	    var ui5Core;
-	    var p_pureJavaScript;
+	    var p_NoUi5;
 
 	    //validate pure javascript
 	    //je mag niet zomaar switchen naar ui5 core
 	    function validate_pjs() {
-	        if (p_pureJavaScript !== this.pureJavaScript) {
+	        if (p_NoUi5 !== this.NoUi5) {
 	            throw "Cant change from javascript only to ui5";
 	        } else {
 	            return true;
@@ -76,15 +76,15 @@
 	        }
 	    }; //stop buitenaf zichtbaar
 
-	    Jep.init = function (pureJavaScript) {
+	    Jep.init = function (NoUi5) {
 	        var self = this;
-	        self.pureJavaScript = pureJavaScript;
+	        self.NoUi5 = NoUi5;
 	        //indien de private variabele gevuld is mag deze niet meer gewijzigd worden
-	        p_pureJavaScript = p_pureJavaScript || self.pureJavaScript;
+	        p_NoUi5 = p_NoUi5 || self.NoUi5;
 	        var val_pjs = validate_pjs.bind(self);
 	        val_pjs();
 
-	        if (p_pureJavaScript) {
+	        if (p_NoUi5) {
 	            console.log('JS ONLY');
 	        } else if (!sap) {
 	            throw "UI5 not loaded";
