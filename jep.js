@@ -78,7 +78,7 @@
 
 	    Jep.init = function (NoUi5) {
 	        var self = this;
-	        self.NoUi5 = NoUi5;
+	        self.NoUi5 = NoUi5 || false;
 	        //indien de private variabele gevuld is mag deze niet meer gewijzigd worden
 	        p_NoUi5 = p_NoUi5 || self.NoUi5;
 	        var val_pjs = validate_pjs.bind(self);
