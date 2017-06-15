@@ -1,9 +1,4 @@
 	//Load Jep util in component zodat deze op het window object zit
-	//		$.getScript("libs/jep.js", function(data, textStatus, jqxhr) {
-	//			console.log(textStatus); // Success
-	//			console.log("Load was performed from jEP.js");
-	//		});
-
 	// beter werkt ajax async
 	// 	$.ajax({
 	//			async: false,
